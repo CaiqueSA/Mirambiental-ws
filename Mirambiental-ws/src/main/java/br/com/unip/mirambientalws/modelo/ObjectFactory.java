@@ -2,7 +2,7 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.7 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2016.11.24 às 01:24:14 AM BRST 
+// Gerado em: 2016.11.24 às 01:49:18 AM BRST 
 //
 
 
@@ -37,11 +37,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MirambientalBuscaResponse }
+     * 
+     */
+    public MirambientalBuscaResponse createMirambientalBuscaResponse() {
+        return new MirambientalBuscaResponse();
+    }
+
+    /**
      * Create an instance of {@link TipoIncidente }
      * 
      */
     public TipoIncidente createTipoIncidente() {
         return new TipoIncidente();
+    }
+
+    /**
+     * Create an instance of {@link MirambientalResponse }
+     * 
+     */
+    public MirambientalResponse createMirambientalResponse() {
+        return new MirambientalResponse();
+    }
+
+    /**
+     * Create an instance of {@link RetornoBusca }
+     * 
+     */
+    public RetornoBusca createRetornoBusca() {
+        return new RetornoBusca();
     }
 
     /**
@@ -58,6 +82,14 @@ public class ObjectFactory {
      */
     public Incidente createIncidente() {
         return new Incidente();
+    }
+
+    /**
+     * Create an instance of {@link UsuarioExisteResponse }
+     * 
+     */
+    public UsuarioExisteResponse createUsuarioExisteResponse() {
+        return new UsuarioExisteResponse();
     }
 
 }

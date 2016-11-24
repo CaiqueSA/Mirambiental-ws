@@ -2,7 +2,37 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="modelo.mirambientalws.unip.com.br" xmlns:tns="modelo.mirambientalws.unip.com.br"
 	elementFormDefault="qualified">
-	
+
+	<xs:complexType name="usuarioExisteResponse">
+		<xs:sequence>
+			<xs:element name="existe" type="xs:boolean" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="mirambientalResponse">
+		<xs:sequence>
+			<xs:element name="codigo" type="xs:int" />
+			<xs:element name="descricao" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="mirambientalBuscaResponse">
+		<xs:sequence>
+			<xs:element name="retornoBusca" type="tns:incidente"
+				maxOccurs="unbounded" />
+			<xs:element name="codigo" type="xs:int" />
+			<xs:element name="descricao" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="retornoBusca">
+		<xs:sequence>
+			<xs:element name="usuario" type="tns:usuario" />
+			<xs:element name="incidente" type="tns:incidente" />
+			<xs:element name="tipoIncidente" type="tns:tipoIncidente" />
+		</xs:sequence>
+	</xs:complexType>
 
 	<xs:complexType name="usuario">
 		<xs:sequence>
