@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="modelo.mirambientalws.unip.com.br" xmlns:tns="modelo.mirambientalws.unip.com.br"
+	elementFormDefault="qualified">
+	
+
+	<xs:complexType name="usuario">
+		<xs:sequence>
+			<xs:element name="idUsuario" type="xs:int" />
+			<xs:element name="nomeUsuario" type="xs:string" />
+			<xs:element name="senhaUsuario" type="xs:string" />
+			<xs:element name="imagemUsuario" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="incidente">
+		<xs:sequence>
+			<xs:element name="idIncidente" type="xs:int" />
+			<xs:element name="idTipoIncidente" type="xs:int" />
+			<xs:element name="idUsuario" type="xs:int" />
+			<xs:element name="endereco" type="xs:string" />
+			<xs:element name="imagem" type="xs:base64Binary" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="tipoIncidente">
+		<xs:sequence>
+			<xs:element name="idTipoIncidente" type="xs:int" />
+			<xs:element name="descricao" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
