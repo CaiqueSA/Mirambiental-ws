@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="modelo.mirambientalws.unip.com.br" xmlns:tns="modelo.mirambientalws.unip.com.br"
+	elementFormDefault="qualified">
+
+	<xs:element name="atributoBusca">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuario" type="tns:usuarioAtributo" />
+				<xs:element name="incidente" type="tns:incidenteAtributo" />
+				<xs:element name="tipoIncidente" type="tns:tipoIncidenteAtributo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="usuarioAtributo">
+		<xs:sequence>
+			<xs:element name="idUsuario" type="xs:int" />
+			<xs:element name="nomeUsuario" type="xs:string" />
+			<xs:element name="senhaUsuario" type="xs:string" />
+			<xs:element name="imagemUsuario" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="incidenteAtributo">
+		<xs:sequence>
+			<xs:element name="idIncidente" type="xs:int" />
+			<xs:element name="idTipoIncidente" type="xs:int" />
+			<xs:element name="idUsuario" type="xs:int" />
+			<xs:element name="endereco" type="xs:string" />
+			<xs:element name="imagem" type="xs:base64Binary" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="tipoIncidenteAtributo">
+		<xs:sequence>
+			<xs:element name="idTipoIncidente" type="xs:int" />
+			<xs:element name="descricao" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+
+
+	<!-- Operação usuarioExiste -->
+	<xs:element name="usuarioExisteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuario" type="tns:usuarioAtributo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="usuarioExisteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="codigo" type="xs:int" />
+				<xs:element name="descricao" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Incluir usuário -->
+	<xs:element name="incluirUsuarioRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuario" type="tns:usuarioAtributo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="incluirUsuarioResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="codigo" type="xs:int" />
+				<xs:element name="descricao" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Autenticar usuário -->
+	<xs:element name="autenticarUsuarioRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuario" type="tns:usuarioAtributo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="autenticarUsuarioResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="codigo" type="xs:int" />
+				<xs:element name="descricao" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<!-- Incluir incidente -->
+	<xs:element name="incluirIncidenteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="incidente" type="tns:incidenteAtributo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="incluirIncidenteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="codigo" type="xs:int" />
+				<xs:element name="descricao" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Excluir incidente -->
+	<xs:element name="excluirIncidenteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="incidente" type="tns:incidenteAtributo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="excluirIncidenteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="codigo" type="xs:int" />
+				<xs:element name="descricao" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Alterar incidente -->
+	<xs:element name="alterarIncidenteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="incidente" type="tns:incidenteAtributo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="alterarIncidenteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="codigo" type="xs:int" />
+				<xs:element name="descricao" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Alterar incidente -->
+	<xs:element name="deletarIncidenteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="incidente" type="tns:incidenteAtributo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="deletarIncidenteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="codigo" type="xs:int" />
+				<xs:element name="descricao" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Buscar incidente -->
+	<xs:element name="buscarIncidenteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="incidente" type="tns:incidenteAtributo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="buscarIncidenteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="retornoBusca" type="tns:incidenteAtributo"
+					maxOccurs="unbounded" />
+				<xs:element name="codigo" type="xs:int" />
+				<xs:element name="descricao" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Buscar incidentes -->
+
+	<xs:element name="buscarIncidentesRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="executar" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="buscarIncidentesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="retornoBusca" type="tns:incidenteAtributo"
+					maxOccurs="unbounded" />
+				<xs:element name="codigo" type="xs:int" />
+				<xs:element name="descricao" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

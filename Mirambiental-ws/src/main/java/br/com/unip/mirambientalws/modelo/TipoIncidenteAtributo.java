@@ -11,21 +11,20 @@ package br.com.unip.mirambientalws.modelo;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de anonymous complex type.
+ * <p>Classe Java de tipoIncidenteAtributo complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType>
+ * &lt;complexType name="tipoIncidenteAtributo">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="codigo" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="idTipoIncidente" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="descricao" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -36,31 +35,30 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "codigo",
+@XmlType(name = "tipoIncidenteAtributo", propOrder = {
+    "idTipoIncidente",
     "descricao"
 })
-@XmlRootElement(name = "usuarioExisteResponse")
-public class UsuarioExisteResponse {
+public class TipoIncidenteAtributo {
 
-    protected int codigo;
+    protected int idTipoIncidente;
     @XmlElement(required = true)
     protected String descricao;
 
     /**
-     * Obtém o valor da propriedade codigo.
+     * Obtém o valor da propriedade idTipoIncidente.
      * 
      */
-    public int getCodigo() {
-        return codigo;
+    public int getIdTipoIncidente() {
+        return idTipoIncidente;
     }
 
     /**
-     * Define o valor da propriedade codigo.
+     * Define o valor da propriedade idTipoIncidente.
      * 
      */
-    public void setCodigo(int value) {
-        this.codigo = value;
+    public void setIdTipoIncidente(int value) {
+        this.idTipoIncidente = value;
     }
 
     /**

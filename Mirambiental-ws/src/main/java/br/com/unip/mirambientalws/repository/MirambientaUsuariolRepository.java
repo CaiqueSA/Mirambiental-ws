@@ -1,23 +1,15 @@
 package br.com.unip.mirambientalws.repository;
 
-import br.com.unip.mirambientalws.modelo.MirambientalResponse;
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
 import br.com.unip.mirambientalws.modelo.Usuario;
 
-public class MirambientaUsuariolRepository {
+@Repository
+public interface MirambientaUsuariolRepository extends CrudRepository<Usuario, Integer> {
 
-	public boolean verificarUsuarioExiste(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public MirambientalResponse incluirUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public MirambientalResponse autenticarUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	List<Usuario> findBynomeUsuario(String nomeUsuario);
 
 }

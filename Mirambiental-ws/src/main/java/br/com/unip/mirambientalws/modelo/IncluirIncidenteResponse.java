@@ -40,8 +40,8 @@ import javax.xml.bind.annotation.XmlType;
     "codigo",
     "descricao"
 })
-@XmlRootElement(name = "usuarioExisteResponse")
-public class UsuarioExisteResponse {
+@XmlRootElement(name = "incluirIncidenteResponse")
+public class IncluirIncidenteResponse {
 
     protected int codigo;
     @XmlElement(required = true)

@@ -2,7 +2,7 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.7 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2016.11.24 às 02:08:18 AM BRST 
+// Gerado em: 2016.11.24 às 05:34:25 PM BRST 
 //
 
 
@@ -11,22 +11,23 @@ package br.com.unip.mirambientalws.modelo;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de retornoBusca complex type.
+ * <p>Classe Java de anonymous complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType name="retornoBusca">
+ * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="usuario" type="{modelo.mirambientalws.unip.com.br}usuario"/>
- *         &lt;element name="incidente" type="{modelo.mirambientalws.unip.com.br}incidente"/>
- *         &lt;element name="tipoIncidente" type="{modelo.mirambientalws.unip.com.br}tipoIncidente"/>
+ *         &lt;element name="usuario" type="{modelo.mirambientalws.unip.com.br}usuarioAtributo"/>
+ *         &lt;element name="incidente" type="{modelo.mirambientalws.unip.com.br}incidenteAtributo"/>
+ *         &lt;element name="tipoIncidente" type="{modelo.mirambientalws.unip.com.br}tipoIncidenteAtributo"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,29 +37,30 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "retornoBusca", propOrder = {
+@XmlType(name = "", propOrder = {
     "usuario",
     "incidente",
     "tipoIncidente"
 })
-public class RetornoBusca {
+@XmlRootElement(name = "atributoBusca")
+public class AtributoBusca {
 
     @XmlElement(required = true)
-    protected Usuario usuario;
+    protected UsuarioAtributo usuario;
     @XmlElement(required = true)
-    protected Incidente incidente;
+    protected IncidenteAtributo incidente;
     @XmlElement(required = true)
-    protected TipoIncidente tipoIncidente;
+    protected TipoIncidenteAtributo tipoIncidente;
 
     /**
      * Obtém o valor da propriedade usuario.
      * 
      * @return
      *     possible object is
-     *     {@link Usuario }
+     *     {@link UsuarioAtributo }
      *     
      */
-    public Usuario getUsuario() {
+    public UsuarioAtributo getUsuario() {
         return usuario;
     }
 
@@ -67,10 +69,10 @@ public class RetornoBusca {
      * 
      * @param value
      *     allowed object is
-     *     {@link Usuario }
+     *     {@link UsuarioAtributo }
      *     
      */
-    public void setUsuario(Usuario value) {
+    public void setUsuario(UsuarioAtributo value) {
         this.usuario = value;
     }
 
@@ -79,10 +81,10 @@ public class RetornoBusca {
      * 
      * @return
      *     possible object is
-     *     {@link Incidente }
+     *     {@link IncidenteAtributo }
      *     
      */
-    public Incidente getIncidente() {
+    public IncidenteAtributo getIncidente() {
         return incidente;
     }
 
@@ -91,10 +93,10 @@ public class RetornoBusca {
      * 
      * @param value
      *     allowed object is
-     *     {@link Incidente }
+     *     {@link IncidenteAtributo }
      *     
      */
-    public void setIncidente(Incidente value) {
+    public void setIncidente(IncidenteAtributo value) {
         this.incidente = value;
     }
 
@@ -103,10 +105,10 @@ public class RetornoBusca {
      * 
      * @return
      *     possible object is
-     *     {@link TipoIncidente }
+     *     {@link TipoIncidenteAtributo }
      *     
      */
-    public TipoIncidente getTipoIncidente() {
+    public TipoIncidenteAtributo getTipoIncidente() {
         return tipoIncidente;
     }
 
@@ -115,10 +117,10 @@ public class RetornoBusca {
      * 
      * @param value
      *     allowed object is
-     *     {@link TipoIncidente }
+     *     {@link TipoIncidenteAtributo }
      *     
      */
-    public void setTipoIncidente(TipoIncidente value) {
+    public void setTipoIncidente(TipoIncidenteAtributo value) {
         this.tipoIncidente = value;
     }
 

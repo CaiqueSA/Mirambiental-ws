@@ -2,7 +2,7 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.7 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2016.11.24 às 02:08:18 AM BRST 
+// Gerado em: 2016.11.24 às 05:34:25 PM BRST 
 //
 
 
@@ -11,16 +11,17 @@ package br.com.unip.mirambientalws.modelo;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de mirambientalResponse complex type.
+ * <p>Classe Java de anonymous complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType name="mirambientalResponse">
+ * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -35,11 +36,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "mirambientalResponse", propOrder = {
+@XmlType(name = "", propOrder = {
     "codigo",
     "descricao"
 })
-public class MirambientalResponse {
+@XmlRootElement(name = "autenticarUsuarioResponse")
+public class AutenticarUsuarioResponse {
 
     protected int codigo;
     @XmlElement(required = true)

@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5b14ef42-96b9-46cb-9932-1f2425a6300d" activeEnvironment="Default" name="mirambiental" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="1a6b8fca-69e9-4bfc-bca5-9f453555fddc" wsaVersion="NONE" name="MirambientalPortSoap11" type="wsdl" bindingName="{modelo.mirambientalws.unip.com.br}MirambientalPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/mirambiental.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/mirambiental.wsdl"><con:part><con:url>http://localhost:8080/ws/mirambiental.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="modelo.mirambientalws.unip.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="modelo.mirambientalws.unip.com.br" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="modelo.mirambientalws.unip.com.br">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="modelo.mirambientalws.unip.com.br" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="atributoBusca">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="usuario" type="tns:usuarioAtributo"/>
+            <xs:element name="incidente" type="tns:incidenteAtributo"/>
+            <xs:element name="tipoIncidente" type="tns:tipoIncidenteAtributo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="usuarioAtributo">
+        <xs:sequence>
+          <xs:element name="idUsuario" type="xs:int"/>
+          <xs:element name="nomeUsuario" type="xs:string"/>
+          <xs:element name="senhaUsuario" type="xs:string"/>
+          <xs:element name="imagemUsuario" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="incidenteAtributo">
+        <xs:sequence>
+          <xs:element name="idIncidente" type="xs:int"/>
+          <xs:element name="idTipoIncidente" type="xs:int"/>
+          <xs:element name="idUsuario" type="xs:int"/>
+          <xs:element name="endereco" type="xs:string"/>
+          <xs:element name="imagem" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoIncidenteAtributo">
+        <xs:sequence>
+          <xs:element name="idTipoIncidente" type="xs:int"/>
+          <xs:element name="descricao" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <!--Operação usuarioExiste-->
+      <xs:element name="usuarioExisteRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="usuario" type="tns:usuarioAtributo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usuarioExisteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="codigo" type="xs:int"/>
+            <xs:element name="descricao" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Incluir usuário-->
+      <xs:element name="incluirUsuarioRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="usuario" type="tns:usuarioAtributo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="incluirUsuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="codigo" type="xs:int"/>
+            <xs:element name="descricao" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Autenticar usuário-->
+      <xs:element name="autenticarUsuarioRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="usuario" type="tns:usuarioAtributo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="autenticarUsuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="codigo" type="xs:int"/>
+            <xs:element name="descricao" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Incluir incidente-->
+      <xs:element name="incluirIncidenteRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="incidente" type="tns:incidenteAtributo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="incluirIncidenteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="codigo" type="xs:int"/>
+            <xs:element name="descricao" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Excluir incidente-->
+      <xs:element name="excluirIncidenteRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="incidente" type="tns:incidenteAtributo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="excluirIncidenteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="codigo" type="xs:int"/>
+            <xs:element name="descricao" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Alterar incidente-->
+      <xs:element name="alterarIncidenteRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="incidente" type="tns:incidenteAtributo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="alterarIncidenteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="codigo" type="xs:int"/>
+            <xs:element name="descricao" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Alterar incidente-->
+      <xs:element name="deletarIncidenteRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="incidente" type="tns:incidenteAtributo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deletarIncidenteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="codigo" type="xs:int"/>
+            <xs:element name="descricao" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Buscar incidente-->
+      <xs:element name="buscarIncidenteRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="incidente" type="tns:incidenteAtributo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="buscarIncidenteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="retornoBusca" type="tns:incidenteAtributo"/>
+            <xs:element name="codigo" type="xs:int"/>
+            <xs:element name="descricao" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Buscar incidentes-->
+      <xs:element name="buscarIncidentesRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="executar" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="buscarIncidentesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="retornoBusca" type="tns:incidenteAtributo"/>
+            <xs:element name="codigo" type="xs:int"/>
+            <xs:element name="descricao" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="buscarIncidentesRequest">
+    <wsdl:part element="tns:buscarIncidentesRequest" name="buscarIncidentesRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="incluirUsuarioResponse">
+    <wsdl:part element="tns:incluirUsuarioResponse" name="incluirUsuarioResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="excluirIncidenteRequest">
+    <wsdl:part element="tns:excluirIncidenteRequest" name="excluirIncidenteRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="incluirIncidenteRequest">
+    <wsdl:part element="tns:incluirIncidenteRequest" name="incluirIncidenteRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="excluirIncidenteResponse">
+    <wsdl:part element="tns:excluirIncidenteResponse" name="excluirIncidenteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="autenticarUsuarioRequest">
+    <wsdl:part element="tns:autenticarUsuarioRequest" name="autenticarUsuarioRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deletarIncidenteRequest">
+    <wsdl:part element="tns:deletarIncidenteRequest" name="deletarIncidenteRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="alterarIncidenteResponse">
+    <wsdl:part element="tns:alterarIncidenteResponse" name="alterarIncidenteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="autenticarUsuarioResponse">
+    <wsdl:part element="tns:autenticarUsuarioResponse" name="autenticarUsuarioResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="incluirIncidenteResponse">
+    <wsdl:part element="tns:incluirIncidenteResponse" name="incluirIncidenteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarIncidentesResponse">
+    <wsdl:part element="tns:buscarIncidentesResponse" name="buscarIncidentesResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deletarIncidenteResponse">
+    <wsdl:part element="tns:deletarIncidenteResponse" name="deletarIncidenteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="usuarioExisteRequest">
+    <wsdl:part element="tns:usuarioExisteRequest" name="usuarioExisteRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="alterarIncidenteRequest">
+    <wsdl:part element="tns:alterarIncidenteRequest" name="alterarIncidenteRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="incluirUsuarioRequest">
+    <wsdl:part element="tns:incluirUsuarioRequest" name="incluirUsuarioRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarIncidenteResponse">
+    <wsdl:part element="tns:buscarIncidenteResponse" name="buscarIncidenteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="usuarioExisteResponse">
+    <wsdl:part element="tns:usuarioExisteResponse" name="usuarioExisteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarIncidenteRequest">
+    <wsdl:part element="tns:buscarIncidenteRequest" name="buscarIncidenteRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MirambientalPort">
+    <wsdl:operation name="buscarIncidentes">
+      <wsdl:input message="tns:buscarIncidentesRequest" name="buscarIncidentesRequest"></wsdl:input>
+      <wsdl:output message="tns:buscarIncidentesResponse" name="buscarIncidentesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="incluirUsuario">
+      <wsdl:input message="tns:incluirUsuarioRequest" name="incluirUsuarioRequest"></wsdl:input>
+      <wsdl:output message="tns:incluirUsuarioResponse" name="incluirUsuarioResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="excluirIncidente">
+      <wsdl:input message="tns:excluirIncidenteRequest" name="excluirIncidenteRequest"></wsdl:input>
+      <wsdl:output message="tns:excluirIncidenteResponse" name="excluirIncidenteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="incluirIncidente">
+      <wsdl:input message="tns:incluirIncidenteRequest" name="incluirIncidenteRequest"></wsdl:input>
+      <wsdl:output message="tns:incluirIncidenteResponse" name="incluirIncidenteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autenticarUsuario">
+      <wsdl:input message="tns:autenticarUsuarioRequest" name="autenticarUsuarioRequest"></wsdl:input>
+      <wsdl:output message="tns:autenticarUsuarioResponse" name="autenticarUsuarioResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletarIncidente">
+      <wsdl:input message="tns:deletarIncidenteRequest" name="deletarIncidenteRequest"></wsdl:input>
+      <wsdl:output message="tns:deletarIncidenteResponse" name="deletarIncidenteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="alterarIncidente">
+      <wsdl:input message="tns:alterarIncidenteRequest" name="alterarIncidenteRequest"></wsdl:input>
+      <wsdl:output message="tns:alterarIncidenteResponse" name="alterarIncidenteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usuarioExiste">
+      <wsdl:input message="tns:usuarioExisteRequest" name="usuarioExisteRequest"></wsdl:input>
+      <wsdl:output message="tns:usuarioExisteResponse" name="usuarioExisteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIncidente">
+      <wsdl:input message="tns:buscarIncidenteRequest" name="buscarIncidenteRequest"></wsdl:input>
+      <wsdl:output message="tns:buscarIncidenteResponse" name="buscarIncidenteResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MirambientalPortSoap11" type="tns:MirambientalPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="buscarIncidentes">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="buscarIncidentesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarIncidentesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="incluirUsuario">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="incluirUsuarioRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="incluirUsuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="excluirIncidente">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="excluirIncidenteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="excluirIncidenteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="incluirIncidente">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="incluirIncidenteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="incluirIncidenteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autenticarUsuario">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="autenticarUsuarioRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="autenticarUsuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletarIncidente">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deletarIncidenteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deletarIncidenteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="alterarIncidente">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="alterarIncidenteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="alterarIncidenteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usuarioExiste">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="usuarioExisteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="usuarioExisteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIncidente">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="buscarIncidenteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarIncidenteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MirambientalPortService">
+    <wsdl:port binding="tns:MirambientalPortSoap11" name="MirambientalPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="a4c5a526-470a-4085-ba23-79cd36cbe130" isOneWay="false" action="" name="usuarioExiste" bindingOperationName="usuarioExiste" type="Request-Response" inputName="usuarioExisteRequest" sendsAttachments="false" anonymous="optional" outputName="usuarioExisteResponse" receivesAttachments="false"><con:settings/><con:call id="996471ca-1e51-47c8-9fb2-be4bc2c95823" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mod="modelo.mirambientalws.unip.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mod:usuarioExisteRequest>
+         <mod:usuario>
+            <mod:idUsuario/>
+            <mod:nomeUsuario>Caique</mod:nomeUsuario>
+            <mod:senhaUsuario/>
+            <mod:imagemUsuario/>
+         </mod:usuario>
+      </mod:usuarioExisteRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="modelo.mirambientalws.unip.com.br/MirambientalPort/usuarioExisteRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="913d0740-8fde-405f-8c38-df0af0f97d28" isOneWay="false" action="" name="buscarIncidentes" bindingOperationName="buscarIncidentes" type="Request-Response" outputName="buscarIncidentesResponse" inputName="buscarIncidentesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f22b4adf-5c32-4490-b896-5f3a621a81fd" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mod="modelo.mirambientalws.unip.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mod:buscarIncidentesRequest>
+         <mod:executar>true</mod:executar>
+      </mod:buscarIncidentesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="modelo.mirambientalws.unip.com.br/MirambientalPort/buscarIncidentesRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4cb3239c-6e9e-400e-abb2-3355ca902712" isOneWay="false" action="" name="incluirUsuario" bindingOperationName="incluirUsuario" type="Request-Response" outputName="incluirUsuarioResponse" inputName="incluirUsuarioRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="171a2979-66f0-4473-8f30-97d33e3b824a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mod="modelo.mirambientalws.unip.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mod:incluirUsuarioRequest>
+         <mod:usuario>
+            <mod:idUsuario></mod:idUsuario>
+            <mod:nomeUsuario>Caique</mod:nomeUsuario>
+            <mod:senhaUsuario>TESTE</mod:senhaUsuario>
+            <mod:imagemUsuario></mod:imagemUsuario>
+         </mod:usuario>
+      </mod:incluirUsuarioRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="modelo.mirambientalws.unip.com.br/MirambientalPort/incluirUsuarioRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4983b138-3f20-4b89-b5bd-ebf52e55d3c7" isOneWay="false" action="" name="excluirIncidente" bindingOperationName="excluirIncidente" type="Request-Response" outputName="excluirIncidenteResponse" inputName="excluirIncidenteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e60c110f-ba19-4492-b0a3-e0c8ceeb1c79" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mod="modelo.mirambientalws.unip.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mod:excluirIncidenteRequest>
+         <mod:incidente>
+            <mod:idIncidente>?</mod:idIncidente>
+            <mod:idTipoIncidente>?</mod:idTipoIncidente>
+            <mod:idUsuario>?</mod:idUsuario>
+            <mod:endereco>?</mod:endereco>
+            <mod:imagem>cid:519410313344</mod:imagem>
+         </mod:incidente>
+      </mod:excluirIncidenteRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="modelo.mirambientalws.unip.com.br/MirambientalPort/excluirIncidenteRequest"/></con:call></con:operation><con:operation id="f2cef7c7-db76-48b8-9fa5-b3f7f2c94c56" isOneWay="false" action="" name="incluirIncidente" bindingOperationName="incluirIncidente" type="Request-Response" outputName="incluirIncidenteResponse" inputName="incluirIncidenteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f0271f2e-ff8c-4504-b904-bee10d3ba10c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mod="modelo.mirambientalws.unip.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mod:incluirIncidenteRequest>
+         <mod:incidente>
+            <mod:idIncidente>?</mod:idIncidente>
+            <mod:idTipoIncidente>?</mod:idTipoIncidente>
+            <mod:idUsuario>?</mod:idUsuario>
+            <mod:endereco>?</mod:endereco>
+            <mod:imagem>cid:6394503680</mod:imagem>
+         </mod:incidente>
+      </mod:incluirIncidenteRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="modelo.mirambientalws.unip.com.br/MirambientalPort/incluirIncidenteRequest"/></con:call></con:operation><con:operation id="c37e046e-0cfb-4714-8975-05c9e99e2977" isOneWay="false" action="" name="autenticarUsuario" bindingOperationName="autenticarUsuario" type="Request-Response" outputName="autenticarUsuarioResponse" inputName="autenticarUsuarioRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a191b775-2146-4b20-bf21-7b5426a5c457" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.0.100:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mod="modelo.mirambientalws.unip.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mod:autenticarUsuarioRequest>
+         <mod:usuario>
+            <mod:idUsuario>?</mod:idUsuario>
+            <mod:nomeUsuario>Caique</mod:nomeUsuario>
+            <mod:senhaUsuario>TESTE</mod:senhaUsuario>
+            <mod:imagemUsuario>?</mod:imagemUsuario>
+         </mod:usuario>
+      </mod:autenticarUsuarioRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="modelo.mirambientalws.unip.com.br/MirambientalPort/autenticarUsuarioRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="37e19378-b718-4910-ad91-5617a6723b1c" isOneWay="false" action="" name="deletarIncidente" bindingOperationName="deletarIncidente" type="Request-Response" outputName="deletarIncidenteResponse" inputName="deletarIncidenteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="aeac1b6f-d9d6-46db-9612-48c56164a7ab" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mod="modelo.mirambientalws.unip.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mod:deletarIncidenteRequest>
+         <mod:incidente>
+            <mod:idIncidente>?</mod:idIncidente>
+            <mod:idTipoIncidente>?</mod:idTipoIncidente>
+            <mod:idUsuario>?</mod:idUsuario>
+            <mod:endereco>?</mod:endereco>
+            <mod:imagem>cid:832717773033</mod:imagem>
+         </mod:incidente>
+      </mod:deletarIncidenteRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="modelo.mirambientalws.unip.com.br/MirambientalPort/deletarIncidenteRequest"/></con:call></con:operation><con:operation id="e951231d-2cef-470c-af9f-5d8c634aa2db" isOneWay="false" action="" name="alterarIncidente" bindingOperationName="alterarIncidente" type="Request-Response" outputName="alterarIncidenteResponse" inputName="alterarIncidenteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="df694608-fbe4-48e3-8a59-b162ec348943" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mod="modelo.mirambientalws.unip.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mod:alterarIncidenteRequest>
+         <mod:incidente>
+            <mod:idIncidente>?</mod:idIncidente>
+            <mod:idTipoIncidente>?</mod:idTipoIncidente>
+            <mod:idUsuario>?</mod:idUsuario>
+            <mod:endereco>?</mod:endereco>
+            <mod:imagem>cid:807091905109</mod:imagem>
+         </mod:incidente>
+      </mod:alterarIncidenteRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="modelo.mirambientalws.unip.com.br/MirambientalPort/alterarIncidenteRequest"/></con:call></con:operation><con:operation id="70c04afd-44a1-463e-bfff-fc88de58f173" isOneWay="false" action="" name="buscarIncidente" bindingOperationName="buscarIncidente" type="Request-Response" outputName="buscarIncidenteResponse" inputName="buscarIncidenteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b8dfc542-ef43-42a8-9238-4983257c7be0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mod="modelo.mirambientalws.unip.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mod:buscarIncidenteRequest>
+         <mod:incidente>
+            <mod:idIncidente>?</mod:idIncidente>
+            <mod:idTipoIncidente>?</mod:idTipoIncidente>
+            <mod:idUsuario>?</mod:idUsuario>
+            <mod:endereco>?</mod:endereco>
+            <mod:imagem>cid:587657053222</mod:imagem>
+         </mod:incidente>
+      </mod:buscarIncidenteRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="modelo.mirambientalws.unip.com.br/MirambientalPort/buscarIncidenteRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -25,8 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="codigo" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="descricao" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="incidente" type="{modelo.mirambientalws.unip.com.br}incidenteAtributo"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,54 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "codigo",
-    "descricao"
+    "incidente"
 })
-@XmlRootElement(name = "usuarioExisteResponse")
-public class UsuarioExisteResponse {
+@XmlRootElement(name = "deletarIncidenteRequest")
+public class DeletarIncidenteRequest {
 
-    protected int codigo;
     @XmlElement(required = true)
-    protected String descricao;
+    protected IncidenteAtributo incidente;
 
     /**
-     * Obtém o valor da propriedade codigo.
-     * 
-     */
-    public int getCodigo() {
-        return codigo;
-    }
-
-    /**
-     * Define o valor da propriedade codigo.
-     * 
-     */
-    public void setCodigo(int value) {
-        this.codigo = value;
-    }
-
-    /**
-     * Obtém o valor da propriedade descricao.
+     * Obtém o valor da propriedade incidente.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link IncidenteAtributo }
      *     
      */
-    public String getDescricao() {
-        return descricao;
+    public IncidenteAtributo getIncidente() {
+        return incidente;
     }
 
     /**
-     * Define o valor da propriedade descricao.
+     * Define o valor da propriedade incidente.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link IncidenteAtributo }
      *     
      */
-    public void setDescricao(String value) {
-        this.descricao = value;
+    public void setIncidente(IncidenteAtributo value) {
+        this.incidente = value;
     }
 
 }

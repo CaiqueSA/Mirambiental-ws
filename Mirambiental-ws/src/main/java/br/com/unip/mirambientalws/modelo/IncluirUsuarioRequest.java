@@ -25,8 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="codigo" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="descricao" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="usuario" type="{modelo.mirambientalws.unip.com.br}usuarioAtributo"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,54 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "codigo",
-    "descricao"
+    "usuario"
 })
-@XmlRootElement(name = "usuarioExisteResponse")
-public class UsuarioExisteResponse {
+@XmlRootElement(name = "incluirUsuarioRequest")
+public class IncluirUsuarioRequest {
 
-    protected int codigo;
     @XmlElement(required = true)
-    protected String descricao;
+    protected UsuarioAtributo usuario;
 
     /**
-     * Obtém o valor da propriedade codigo.
-     * 
-     */
-    public int getCodigo() {
-        return codigo;
-    }
-
-    /**
-     * Define o valor da propriedade codigo.
-     * 
-     */
-    public void setCodigo(int value) {
-        this.codigo = value;
-    }
-
-    /**
-     * Obtém o valor da propriedade descricao.
+     * Obtém o valor da propriedade usuario.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link UsuarioAtributo }
      *     
      */
-    public String getDescricao() {
-        return descricao;
+    public UsuarioAtributo getUsuario() {
+        return usuario;
     }
 
     /**
-     * Define o valor da propriedade descricao.
+     * Define o valor da propriedade usuario.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link UsuarioAtributo }
      *     
      */
-    public void setDescricao(String value) {
-        this.descricao = value;
+    public void setUsuario(UsuarioAtributo value) {
+        this.usuario = value;
     }
 
 }

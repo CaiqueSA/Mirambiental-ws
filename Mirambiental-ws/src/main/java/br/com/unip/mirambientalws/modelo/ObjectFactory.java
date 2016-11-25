@@ -2,7 +2,7 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.7 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2016.11.24 às 02:08:18 AM BRST 
+// Gerado em: 2016.11.24 às 05:34:25 PM BRST 
 //
 
 
@@ -37,51 +37,155 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link MirambientalBuscaResponse }
+     * Create an instance of {@link BuscarIncidentesRequest }
      * 
      */
-    public MirambientalBuscaResponse createMirambientalBuscaResponse() {
-        return new MirambientalBuscaResponse();
+    public BuscarIncidentesRequest createBuscarIncidentesRequest() {
+        return new BuscarIncidentesRequest();
     }
 
     /**
-     * Create an instance of {@link TipoIncidente }
+     * Create an instance of {@link IncluirUsuarioResponse }
      * 
      */
-    public TipoIncidente createTipoIncidente() {
-        return new TipoIncidente();
+    public IncluirUsuarioResponse createIncluirUsuarioResponse() {
+        return new IncluirUsuarioResponse();
     }
 
     /**
-     * Create an instance of {@link MirambientalResponse }
+     * Create an instance of {@link ExcluirIncidenteRequest }
      * 
      */
-    public MirambientalResponse createMirambientalResponse() {
-        return new MirambientalResponse();
+    public ExcluirIncidenteRequest createExcluirIncidenteRequest() {
+        return new ExcluirIncidenteRequest();
     }
 
     /**
-     * Create an instance of {@link RetornoBusca }
+     * Create an instance of {@link IncidenteAtributo }
      * 
      */
-    public RetornoBusca createRetornoBusca() {
-        return new RetornoBusca();
+    public IncidenteAtributo createIncidenteAtributo() {
+        return new IncidenteAtributo();
     }
 
     /**
-     * Create an instance of {@link Usuario }
+     * Create an instance of {@link IncluirIncidenteRequest }
      * 
      */
-    public Usuario createUsuario() {
-        return new Usuario();
+    public IncluirIncidenteRequest createIncluirIncidenteRequest() {
+        return new IncluirIncidenteRequest();
     }
 
     /**
-     * Create an instance of {@link Incidente }
+     * Create an instance of {@link AtributoBusca }
      * 
      */
-    public Incidente createIncidente() {
-        return new Incidente();
+    public AtributoBusca createAtributoBusca() {
+        return new AtributoBusca();
+    }
+
+    /**
+     * Create an instance of {@link UsuarioAtributo }
+     * 
+     */
+    public UsuarioAtributo createUsuarioAtributo() {
+        return new UsuarioAtributo();
+    }
+
+    /**
+     * Create an instance of {@link TipoIncidenteAtributo }
+     * 
+     */
+    public TipoIncidenteAtributo createTipoIncidenteAtributo() {
+        return new TipoIncidenteAtributo();
+    }
+
+    /**
+     * Create an instance of {@link AutenticarUsuarioRequest }
+     * 
+     */
+    public AutenticarUsuarioRequest createAutenticarUsuarioRequest() {
+        return new AutenticarUsuarioRequest();
+    }
+
+    /**
+     * Create an instance of {@link ExcluirIncidenteResponse }
+     * 
+     */
+    public ExcluirIncidenteResponse createExcluirIncidenteResponse() {
+        return new ExcluirIncidenteResponse();
+    }
+
+    /**
+     * Create an instance of {@link AlterarIncidenteResponse }
+     * 
+     */
+    public AlterarIncidenteResponse createAlterarIncidenteResponse() {
+        return new AlterarIncidenteResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeletarIncidenteRequest }
+     * 
+     */
+    public DeletarIncidenteRequest createDeletarIncidenteRequest() {
+        return new DeletarIncidenteRequest();
+    }
+
+    /**
+     * Create an instance of {@link DeletarIncidenteResponse }
+     * 
+     */
+    public DeletarIncidenteResponse createDeletarIncidenteResponse() {
+        return new DeletarIncidenteResponse();
+    }
+
+    /**
+     * Create an instance of {@link BuscarIncidentesResponse }
+     * 
+     */
+    public BuscarIncidentesResponse createBuscarIncidentesResponse() {
+        return new BuscarIncidentesResponse();
+    }
+
+    /**
+     * Create an instance of {@link AutenticarUsuarioResponse }
+     * 
+     */
+    public AutenticarUsuarioResponse createAutenticarUsuarioResponse() {
+        return new AutenticarUsuarioResponse();
+    }
+
+    /**
+     * Create an instance of {@link IncluirIncidenteResponse }
+     * 
+     */
+    public IncluirIncidenteResponse createIncluirIncidenteResponse() {
+        return new IncluirIncidenteResponse();
+    }
+
+    /**
+     * Create an instance of {@link IncluirUsuarioRequest }
+     * 
+     */
+    public IncluirUsuarioRequest createIncluirUsuarioRequest() {
+        return new IncluirUsuarioRequest();
+    }
+
+    /**
+     * Create an instance of {@link UsuarioExisteRequest }
+     * 
+     */
+    public UsuarioExisteRequest createUsuarioExisteRequest() {
+        return new UsuarioExisteRequest();
+    }
+
+    /**
+     * Create an instance of {@link AlterarIncidenteRequest }
+     * 
+     */
+    public AlterarIncidenteRequest createAlterarIncidenteRequest() {
+        return new AlterarIncidenteRequest();
     }
 
     /**
@@ -90,6 +194,22 @@ public class ObjectFactory {
      */
     public UsuarioExisteResponse createUsuarioExisteResponse() {
         return new UsuarioExisteResponse();
+    }
+
+    /**
+     * Create an instance of {@link BuscarIncidenteRequest }
+     * 
+     */
+    public BuscarIncidenteRequest createBuscarIncidenteRequest() {
+        return new BuscarIncidenteRequest();
+    }
+
+    /**
+     * Create an instance of {@link BuscarIncidenteResponse }
+     * 
+     */
+    public BuscarIncidenteResponse createBuscarIncidenteResponse() {
+        return new BuscarIncidenteResponse();
     }
 
 }

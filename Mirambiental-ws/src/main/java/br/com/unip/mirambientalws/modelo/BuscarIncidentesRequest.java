@@ -10,7 +10,6 @@ package br.com.unip.mirambientalws.modelo;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,8 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="codigo" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="descricao" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="executar" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,54 +35,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "codigo",
-    "descricao"
+    "executar"
 })
-@XmlRootElement(name = "usuarioExisteResponse")
-public class UsuarioExisteResponse {
+@XmlRootElement(name = "buscarIncidentesRequest")
+public class BuscarIncidentesRequest {
 
-    protected int codigo;
-    @XmlElement(required = true)
-    protected String descricao;
+    protected boolean executar;
 
     /**
-     * Obtém o valor da propriedade codigo.
+     * Obtém o valor da propriedade executar.
      * 
      */
-    public int getCodigo() {
-        return codigo;
+    public boolean isExecutar() {
+        return executar;
     }
 
     /**
-     * Define o valor da propriedade codigo.
+     * Define o valor da propriedade executar.
      * 
      */
-    public void setCodigo(int value) {
-        this.codigo = value;
-    }
-
-    /**
-     * Obtém o valor da propriedade descricao.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDescricao() {
-        return descricao;
-    }
-
-    /**
-     * Define o valor da propriedade descricao.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescricao(String value) {
-        this.descricao = value;
+    public void setExecutar(boolean value) {
+        this.executar = value;
     }
 
 }
